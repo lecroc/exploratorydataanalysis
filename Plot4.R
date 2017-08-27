@@ -35,7 +35,7 @@ with(plotdat, {plot(Global_active_power~DT, type="l", ylab="Global Active Power 
                lines(Sub_metering_3~DT, col="blue")          
                legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2,
                legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), y.intersp = .4)
-               plot(Global_reactive_power~DT, type="l", ylab="Global Reactive Power (kilowatts)", xlab="")
+               plot(Global_reactive_power~DT, type="l", ylab="Global Reactive Power (kilowatts)", xlab="datetime")
 })
      
 # copy to .png file in working directory
