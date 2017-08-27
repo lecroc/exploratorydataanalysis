@@ -1,6 +1,6 @@
 # Exploratory Data Analysis Course Project 1
 
-# Plot 2
+# Plot 3
 
 # Read in Data
 
