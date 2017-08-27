@@ -1,6 +1,6 @@
 # Exploratory Data Analysis Course Project 1
 
-# Plot 1
+# Plot 2
 
 # Read in Data
 
@@ -14,15 +14,24 @@ alldat$Date <- as.Date(alldat$Date, format="%d/%m/%Y")
 
 plotdat<-subset(alldat, alldat$Date>="2007-02-01" & alldat$Date<="2007-02-02")
 
-# plot histogram with appropriate labels, color
+# Create new variable DT buy combining Date and Time
 
-with(plotdat, hist(Global_active_power, col="red", main = "Global Active Power",
-                   xlab="Global Active Power (kilowatts)",
-                   ylab="Frequency"))
+# Cobble together date and time as string
+DT<-paste(as.Date(plotdat$Date), plotdat$Time)
+
+# convert string to class datetime
+plotdat$DT<-as.POSIXct(DT)
+
+
+# Create plot
+
+with(plotdat, plot(Global_active_power~DT, type="l", 
+     ylab="Global Active Power (kilowatts)",
+     xlab=""))
 
 # copy to .png file in working directory
 
-dev.copy(png, file="plot1.png", height=480, width=480)
+dev.copy(png, file="plot2.png", height=480, width=480)
 
 # turn off device
 
